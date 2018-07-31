@@ -10,10 +10,10 @@
 namespace WalletConfig
 {
     /* The prefix your coins address starts with */
-    const std::string addressPrefix = "TRTL";
+    const std::string addressPrefix = "dark";
 
     /* Your coins 'Ticker', e.g. Monero = XMR, Bitcoin = BTC */
-    const std::string ticker = "TRTL";
+    const std::string ticker = "LMO";
 
     /* The filename to output the CSV to in save_csv */
     const std::string csvFilename = "transactions.csv";
@@ -23,10 +23,10 @@ namespace WalletConfig
     const std::string addressBookFilename = ".addressBook.json";
 
     /* The name of your deamon */
-    const std::string daemonName = "TurtleCoind";
+    const std::string daemonName = "Lumeneod";
 
     /* The name to call this wallet */
-    const std::string walletName = "zedwallet";
+    const std::string walletName = "darkwallet";
 
     /* The name of walletd, the programmatic rpc interface to a wallet */
     const std::string walletdName = "service";
@@ -35,7 +35,7 @@ namespace WalletConfig
     const std::string coinName = std::string(CryptoNote::CRYPTONOTE_NAME);
 
     /* Where can your users contact you for support? E.g. discord */
-    const std::string contactLink = "http://chat.turtlecoin.lol";
+    const std::string contactLink = "http://lumeneo.network";
 
 
     /* The number of decimals your coin has */
@@ -44,17 +44,17 @@ namespace WalletConfig
 
 
     /* The length of a standard address for your coin */
-    const long unsigned int standardAddressLength = 99;
+    const long unsigned int standardAddressLength = 98;
 
     /* The length of an integrated address for your coin */
-    const long unsigned int integratedAddressLength = 236;
+    const long unsigned int integratedAddressLength = 233;
 
 
     /* The mixin value to use with transactions */
-    const uint64_t defaultMixin = CryptoNote::parameters::DEFAULT_MIXIN;
+    const uint64_t defaultMixin = 3;
 
     /* The default fee value to use with transactions (in ATOMIC units!) */
-    const uint64_t defaultFee = CryptoNote::parameters::MINIMUM_FEE; 
+    const uint64_t defaultFee = 100000; 
 
     /* The minimum fee value to allow with transactions (in ATOMIC units!) */
     const uint64_t minimumFee = CryptoNote::parameters::MINIMUM_FEE;

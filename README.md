@@ -60,6 +60,8 @@ sudo apt-get install librocksdb-dev
 The binaries will be in `./src` after compilation is complete.
 
 Run `./src/Lumeneod` to connect to the network and let it sync (it may take a while).
+LUMENEO and then TURTLECOIN will show up and show the block height
+(This coin is forked from Turtlecoin and I think they have a great community with many helpful developers so I want to give them the PR they deserve)
 
 #### Windows 10
 

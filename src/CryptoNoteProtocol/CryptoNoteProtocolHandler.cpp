@@ -243,7 +243,7 @@ bool CryptoNoteProtocolHandler::process_payload_sync_data(const CORE_SYNC_DATA& 
     int64_t diff = static_cast<int64_t>(hshd.current_height) - static_cast<int64_t>(get_current_blockchain_height());
 
     logger(diff >= 0 ? (is_inital ? Logging::INFO : Logging::DEBUGGING) : Logging::TRACE, Logging::BRIGHT_GREEN) << context <<
-      "Your Lumeneo node is syncing with the network. You are "
+      "Your PanzerCoin node is syncing with the network. You are "
       // << get_current_blockchain_height() << " -> " << hshd.current_height
       << std::abs(diff) << " blocks (" << std::abs(diff) / (24 * 60 * 60 / m_currency.difficultyTarget()) << " days) "
       << (diff >= 0 ? std::string("behind") : std::string("ahead of")) << " the Hare. Slow and steady wins the race! " << std::endl;
@@ -574,7 +574,7 @@ bool CryptoNoteProtocolHandler::request_missing_objects(CryptoNoteConnectionCont
     requestMissingPoolTransactions(context);
 
     context.m_state = CryptoNoteConnectionContext::state_normal;
-    logger(Logging::INFO, Logging::BRIGHT_GREEN) << context << "Successfully synchronized with the Lumeneo Network.";
+    logger(Logging::INFO, Logging::BRIGHT_GREEN) << context << "Successfully synchronized with the Panzer Network.";
     on_connection_synchronized();
   }
   return true;
@@ -585,25 +585,27 @@ bool CryptoNoteProtocolHandler::on_connection_synchronized() {
   if (m_synchronized.compare_exchange_strong(val_expected, true)) {
     logger(Logging::INFO)
       << ENDL ;
-      logger(INFO, BRIGHT_MAGENTA) << "===[ Lumeneo Tip! ]=============================" << ENDL ;
-      logger(INFO, WHITE) << " Always exit Lumeneod and zedwallet with the \"exit\" command to preserve your chain and wallet data." << ENDL ;
+      logger(INFO, BRIGHT_MAGENTA) << "===[ Panzer Tip! ]=============================" << ENDL ;
+      logger(INFO, WHITE) << " Always exit panzercoind and Infanteriefahrzeug with the \"exit\" command to preserve your chain and wallet data." << ENDL ;
       logger(INFO, WHITE) << " Use the \"help\" command to see a list of available commands." << ENDL ;
-      logger(INFO, WHITE) << " Use the \"export_keys\" command in zedwallet to display your keys for restoring a corrupted wallet." << ENDL ;
-      logger(INFO, WHITE) << " If you need more assistance, visit the #HELP channel in the Lumeneo Discord Chat - https://discord.gg/bS8NqDR" << ENDL ;
+      logger(INFO, WHITE) << " Use the \"export_keys\" command in Infanteriefahrzeug to display your keys for restoring a corrupted wallet." << ENDL ;
+      logger(INFO, WHITE) << " If you need more assistance, visit the #HELP channel in the Panzer Discord Chat - " << ENDL ;
       logger(INFO, BRIGHT_MAGENTA) << "===================================================" << ENDL << ENDL ;
 
-      logger(INFO, BRIGHT_GREEN) <<
+      logger(INFO, BRIGHT_RED) <<
 
-      "\n                                                                          \n"
-      "\n                                                                          \n"
-      "    _|        _|    _|  _|      _|  _|_|_|_|  _|      _|  _|_|_|_|    _|_|  \n"
-      "    _|        _|    _|  _|_|  _|_|  _|        _|_|    _|  _|        _|    _|\n"
-      "    _|        _|    _|  _|  _|  _|  _|_|_|    _|  _|  _|  _|_|_|    _|    _|\n"
-      "    _|        _|    _|  _|      _|  _|        _|    _|_|  _|        _|    _|\n"
-      "    _|_|_|_|    _|_|    _|      _|  _|_|_|_|  _|      _|  _|_|_|_|    _|_|  \n"
-      "                                                                            \n"
-      "\n                                                                          \n"
-      "\n                                                                          \n" << ENDL;
+      "\n                                                                       \n"
+      "\n                                                                       \n"
+      "   {_______        {_       {___     {__{_______ {__{________{_______    \n" 
+      "   {__    {__     {_ __     {_ {__   {__       {__  {__      {__    {__  \n" 
+      "   {__    {__    {_  {__    {__ {__  {__      {__   {__      {__    {__  \n" 
+      "   {_______     {__   {__   {__  {__ {__    {__     {______  {_ {__      \n" 
+      "   {__         {______ {__  {__   {_ {__   {__      {__      {__  {__    \n"
+      "   {__        {__       {__ {__    {_ __ {__        {__      {__    {__  \n"
+      "   {__       {__         {__{__      {__{___________{________{__      {__\n"
+      "\n                                                                       \n"                                                                            \n"
+      "\n                                                                       \n"
+      "\n                                                                       \n"<< ENDL;
 
     m_observerManager.notify(&ICryptoNoteProtocolObserver::blockchainSynchronized, m_core.getTopBlockIndex());
   }

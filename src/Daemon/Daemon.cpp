@@ -229,17 +229,19 @@ int main(int argc, char* argv[])
     // configure logging
     logManager.configure(buildLoggerConfiguration(cfgLogLevel, cfgLogFile));
 
-    logger(INFO, BRIGHT_GREEN) <<
-      "\n                                                                          \n"
-      "\n                                                                          \n"
-      "    _|        _|    _|  _|      _|  _|_|_|_|  _|      _|  _|_|_|_|    _|_|  \n"
-      "    _|        _|    _|  _|_|  _|_|  _|        _|_|    _|  _|        _|    _|\n"
-      "    _|        _|    _|  _|  _|  _|  _|_|_|    _|  _|  _|  _|_|_|    _|    _|\n"
-      "    _|        _|    _|  _|      _|  _|        _|    _|_|  _|        _|    _|\n"
-      "    _|_|_|_|    _|_|    _|      _|  _|_|_|_|  _|      _|  _|_|_|_|    _|_|  \n"
-      "                                                                            \n"
-      "\n                                                                          \n"
-      "\n                                                                          \n"
+    logger(INFO, BRIGHT_RED) <<
+      "\n                                                                       \n"
+      "\n                                                                       \n"
+      "   {_______        {_       {___     {__{_______ {__{________{_______    \n" 
+      "   {__    {__     {_ __     {_ {__   {__       {__  {__      {__    {__  \n" 
+      "   {__    {__    {_  {__    {__ {__  {__      {__   {__      {__    {__  \n" 
+      "   {_______     {__   {__   {__  {__ {__    {__     {______  {_ {__      \n" 
+      "   {__         {______ {__  {__   {_ {__   {__      {__      {__  {__    \n"
+      "   {__        {__       {__ {__    {_ __ {__        {__      {__    {__  \n"
+      "   {__       {__         {__{__      {__{___________{________{__      {__\n"
+      "\n                                                                       \n"                                                                            \n"
+      "\n                                                                       \n"
+      "\n                                                                       \n"
       << ENDL;
 
     logger(INFO, BRIGHT_GREEN) << "Welcome to " << CryptoNote::CRYPTONOTE_NAME << " v" << PROJECT_VERSION_LONG;
